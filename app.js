@@ -1,6 +1,6 @@
 /* RT Inventory — offline-first inventory PWA. All data lives in IndexedDB on this device. */
 'use strict';
-const APP_VERSION = '1.0.2';
+const APP_VERSION = '1.0.3';
 const DB_NAME = 'rt-inventory';
 const DB_VERSION = 1;
 const INACTIVE = new Set(['sold', 'archived', 'merged_duplicate', 'removed']);
@@ -289,7 +289,7 @@ async function renderForm(sku) {
   view().innerHTML = `<form id="frm" novalidate>
     <div class="card"><h2>Photos</h2><div class="photos" id="phGrid"></div>
       <div class="btnrow"><button type="button" class="btn" id="camBtn">📷 Take photo</button><button type="button" class="btn" id="libBtn">🖼 Choose photos</button></div>
-      <input type="file" id="camIn" accept="image/*,.heic,.heif,image/heic,image/heif" capture="environment" hidden><input type="file" id="libIn" accept="image/*,.heic,.heif,image/heic,image/heif" multiple hidden>
+      <input type="file" id="camIn" accept="image/*,.heic,.heif,image/heic,image/heif" capture="environment" hidden><input type="file" id="libIn" multiple hidden>
       <p class="small" id="phMsg"></p></div>
     <div class="card">
       ${inputFor('title', rec.title, 'required enterkeyhint="next"')}
